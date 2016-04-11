@@ -17,9 +17,10 @@
 //= require_tree .
 
 
-$(function () {
-  $('#employees th a').live('click', function () {
-    $.getScript(this.href);
-    return false;
-  });
-})
+$(document).ready(function () {
+    $('#employees_search input').keyup(function() {
+        $.get($('#employees_search').attr('action'),
+        $('#employees_search').serialize(), null, 'script');
+        return false;
+    });
+});

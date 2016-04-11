@@ -4,7 +4,7 @@
 
     <div class="container">
       <div class="form-inline">
-        <%= form_tag employees_path, :method => 'get' do %>
+        <%= form_tag employees_path, :method => 'get', :id => 'employees_search' do %>
           <p>
             <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Поиск работников' %>
             <%= submit_tag 'Поиск', :name => nil, class: 'btn btn-default' %>
