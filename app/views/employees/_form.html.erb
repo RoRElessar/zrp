@@ -1,0 +1,55 @@
+<%= form_for(@employee) do |f| %>
+<div class="container">
+    <%= render 'layouts/errors', object: @employee %>
+</div>
+    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <% if @employee.present? %>
+            <h3 class="thin text-center"><%= @employee.surname %> <%= @employee.name %> <%= @employee.patronymic %></h3>
+            <p class="text-center text-muted"><%= @employee.code %></p>
+          <% else %>
+              <h3 class="thin text-center">Создание нового работника</h3>
+              <p class="text-center text-muted">Информация</p>
+          <% end %>
+          <hr>
+            <div class="field">
+              <%= f.text_field :surname, placeholder: 'Фамилия', class: 'form-control' %>
+            </div> <br>
+            <div class="field">
+              <%= f.text_field :name, placeholder: 'Имя', class: 'form-control' %>
+            </div> <br>
+            <div class="field">
+              <%= f.text_field :patronymic, placeholder: 'Отчество', class: 'form-control' %>
+            </div> <br>
+            <div class="field">
+              <%= f.text_field :position, placeholder: 'Должность', class: 'form-control' %>
+            </div> <br>
+            <div class="field">
+              <%= f.number_field :code, placeholder: 'Идентификационный код', class: 'form-control' %>
+            </div> <br>
+            <div class="field">
+              <%= f.text_field :address, placeholder: 'Адресс', class: 'form-control' %>
+            </div> <br>
+            <div class="field">
+              <%= f.label 'Дата рождения'%><br>
+              <%= f.date_select :birthday, start_year: Date.today.year - 60, end_year: Date.today.year, use_month_names: ['Январь', 'Февраль', 'Март','Апрель', 'Май', 'Июнь','Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь' ], order: [:day, :month, :year] %>
+            </div> <br>
+            <div class="field">
+              <%= f.phone_field :phone, placeholder: 'Телефон', class: 'form-control' %>
+            </div> <br>
+            <div class="field">
+              <%= f.text_field :email, placeholder: 'Email', class: 'form-control' %>
+            </div>
+          <br>
+          <div class="field">
+            <%= f.text_area :note, placeholder: 'Заметка', class: 'form-control' %>
+          </div>
+          <br>
+            <div class="thin text-center">
+              <%= f.submit 'Подтвердить', class: 'btn btn-success' %>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>

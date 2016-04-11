@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<% if @employees.present?  %>
+
+    <div class="container">
+      <div class="form-inline">
+        <%= form_tag employees_path, :method => 'get' do %>
+          <p>
+            <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Поиск работников' %>
+            <%= submit_tag 'Поиск', :name => nil, class: 'btn btn-default' %>
+          </p>
+        <% end %>
+      </div>
+    </div>
+  <div class="container">
+  <h3 class="text-center">Список работников </h3>
+    <div class="text-right"><%= link_to 'Создать нового работника', new_employee_path, class: 'btn btn-primary btn-xs btn-block' %></div>
+  </div>
+
+  <div id="employees">
+    <%= render 'employees/index_table' %>
+  </div>
+
+<% else %>
+  <h4 class="text-center">Работники отсутствуют в базе данных, <%= link_to 'начните добавлять их прямо сейчас', new_employee_path %> </h4>
+<% end %>
+
