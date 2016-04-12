@@ -3,7 +3,7 @@ ActiveAdmin.register Employee do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-# permit_params :list, :of, :attributes, :on, :model
+permit_params :surnae, :name, :patronymic, :position, :code, :birthday, :address, :phone, :email, :note, :fired, :fired_date
 #
 # or
 #
@@ -23,7 +23,7 @@ ActiveAdmin.register Employee do
     actions
   end
 
-  show do
+  show title: :surname do
     attributes_table do
       row :surname
       row :name
@@ -35,11 +35,13 @@ ActiveAdmin.register Employee do
       row :phone
       row :email
       row :note
+      row :fired
+      row :fired_date
     end
   end
 
   form do |f|
-    f.inputs "Данные о работнике" do
+    f.inputs 'Данные о работнике' do
       f.input :surname
       f.input :name
       f.input :patronymic
@@ -49,6 +51,8 @@ ActiveAdmin.register Employee do
       f.input :address
       f.input :phone
       f.input :email
+      f.input :fired
+      f.input :fired_date
       f.input :note
     end
     f.actions

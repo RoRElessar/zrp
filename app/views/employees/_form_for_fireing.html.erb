@@ -1,0 +1,16 @@
+<div class="row">
+  <%= form_for (@employee) do |f| %>
+      <div class="col-md-6 text-center">
+        <%= f.label :fired, 'Уволен:' %>
+        <%= f.check_box :fired %>
+      </div>
+      <div class="col-md-6 text-center">
+        <%= f.label :fired_date, 'День увольнения:' %>
+        <%= f.date_select :fired_date, start_year: Date.today.year - 60, end_year: Date.today.year, use_month_names: ['Январь', 'Февраль', 'Март','Апрель', 'Май', 'Июнь','Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь' ], order: [:day, :month, :year] %>
+      </div>
+      <div class="text-center">
+        <%= f.submit 'Подтвердить', class: 'btn btn-success btn-xs', data: {confirm: 'Вы уверены? Дальнейшее восстановление невозможно!'} %> <br>
+        <p> </p>
+      </div>
+  <% end %>
+</div>
