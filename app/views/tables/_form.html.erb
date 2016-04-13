@@ -1,0 +1,25 @@
+<%= form_for [@employee, @table]  do |f| %>
+  <p>
+  <%= f.label :days_worked, 'Отработано дней:' %> <br>
+  <%= f.number_field :days_worked %>
+  </p>
+
+  <p>
+  <%= f.label :days_of_sickness, 'Дни на больничном:' %> <br> <!--Разбить позже на первые 5 дней и остальное, а так же на прошлый, этот и слудющий месяца-->
+  <%= f.number_field :days_of_sickness %>
+  </p>
+
+  <p>
+  <%= f.label :vacation_days, 'Дни отпуска:' %> <br><!--Разбить позже на этот месяц, и 2 следующих месяца-->
+  <%= f.number_field :vacation_days %>
+  </p>
+
+  <p>
+  <%= f.label :unpaid_vacation_days, 'Дни за свой счет:' %> <br>
+  <%= f.number_field :unpaid_vacation_days %>
+  </p>
+
+  <p>
+  <%= f.submit 'Подтвердить', class: 'btn btn-sm btn-success' %>
+  </p>
+<% end %>

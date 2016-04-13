@@ -58,6 +58,21 @@
         <%= link_to 'Редактировать', edit_employee_path(@employee), class: 'btn btn-sm btn-warning btn-block' %>
       <% end %>
 
+      <%= link_to 'Табель', '#collapse2', class: 'btn btn-sm btn-info btn-block', data: {toggle: :collapse} %>
+
+        <div id="collapse2" class="panel-collapse collapse">
+          <div class="row">
+            <p></p>
+            <div class="col-md-6 text-center">
+              <%= link_to 'Создать табель', new_employee_table_path(@employee), class: 'btn btn-xs btn-success' %>
+            </div>
+            <div class="col-md-6 text-center">
+              <%= link_to 'Архив', employee_tables_path(@employee), class: 'btn btn-xs btn-default' %>
+              <p></p>
+            </div>
+          </div>
+        </div>
+
       <%= link_to 'Назад', employees_path, class: 'btn btn-sm btn-primary btn-block' %>
   </div>
 </div>

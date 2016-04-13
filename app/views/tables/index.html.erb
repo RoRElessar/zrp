@@ -1,0 +1,26 @@
+<div class="container">
+
+  <div class="text-center well well-sm">
+    <h4><%= @employee.surname %> <%= @employee.name %> <%= @employee.patronymic %></h4>
+    <p>Архив</p>
+  </div>
+
+  <% @employee.tables.each do |table| %>
+      <table class="table table-hover">
+        <tr></tr>
+          <th>Отработано дней</th>
+          <th>Дней больничного</th>
+          <th>Дней отпуска</th>
+          <th>Дней за свой счет</th>
+          <th class="text-center">Действия</th>
+        <tr>
+          <td><%= table.days_worked %></td>
+          <td><%= table.days_of_sickness %></td>
+          <td><%= table.vacation_days %></td>
+          <td><%= table.unpaid_vacation_days %></td>
+          <td><%= link_to 'Редактировать', edit_employee_table_path(@employee, table), class: 'btn btn-xs btn-block btn-warning' %></td>
+        </tr>
+      </table>
+     <br>
+  <% end %>
+</div>

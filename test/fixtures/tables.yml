@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  table_number: MyString
+  : 1
+  days_worked: MyString
+  : 1
+  days_of_sickness: MyString
+  : 1
+  vacation_days: MyString
+  : 1
+  unpaid_vacation_days: MyString
+  : 1
+
+two:
+  table_number: MyString
+  : 1
+  days_worked: MyString
+  : 1
+  days_of_sickness: MyString
+  : 1
+  vacation_days: MyString
+  : 1
+  unpaid_vacation_days: MyString
+  : 1

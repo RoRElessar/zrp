@@ -17,10 +17,13 @@
 //= require_tree .
 
 
-$(document).ready(function () {
+var ready;
+ready = function() {
     $('#employees_search input').keyup(function() {
         $.get($('#employees_search').attr('action'),
         $('#employees_search').serialize(), null, 'script');
         false;
     });
-});
+};
+$(document).ready(ready);
+$(document).on('page:load', ready);

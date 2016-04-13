@@ -10,6 +10,7 @@ class EmployeesController < ApplicationController
   # GET /employees/1
   # GET /employees/1.json
   def show
+    @table = Table.new(employee_id: :employee)
   end
 
   # GET /employees/new

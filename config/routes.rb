@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   #get 'welcome/index'
 
-  resources :employees
+  resources :employees do
+    resources :tables, only: [:index, :new, :create, :show, :edit, :update]
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid">
+  <h3 class="well well-sm text-center"><%= @employee.surname %> <%= @employee.name %> <%= @employee.patronymic %></h3>
+
+  <%= link_to 'Редактировать табель', edit_employee_table_path(@employee, @employee.tables), class: 'btn btn-xs btn-block btn-primary' %>
+  <table class="table table-hover table-bordered">
+    <tr>
+      <th>Отработано дней</th>
+      <th>Дни на больничном</th>
+      <th>Дни отпуска</th>
+      <th>Дни за свой счет</th>
+    </tr>
+    <tr>
+      <td><%= @table.days_worked %></td>
+      <td><%= @table.days_of_sickness %></td>
+      <td><%= @table.vacation_days %></td>
+      <td><%= @table.unpaid_vacation_days %></td>
+    </tr>
+
+  </table>
+
+  <%= link_to 'Назад', employee_path(@employee), class: 'btn btn-sm btn-default' %>
+</div>

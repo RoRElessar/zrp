@@ -1,5 +1,7 @@
 class Employee < ActiveRecord::Base
 
+  has_many :tables, dependent: :destroy
+
   def before_save
     self.surname.mb_chars.capitalize!
     self.name.mb_chars.capitalize!
