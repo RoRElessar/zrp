@@ -24,7 +24,7 @@ class Employee < ActiveRecord::Base
 
   def self.search(search)
     if search
-      where('surname LIKE ?', "%#{search}%")
+      where('surname ILIKE ?', "%#{search}%")
     else
       Employee.all
     end
