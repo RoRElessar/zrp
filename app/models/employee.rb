@@ -10,11 +10,11 @@ class Employee < ActiveRecord::Base
 
   phony_normalize :phone, default_country_code: 'UA'
 
-  validates :name, :surname, :patronymic, :phone, :position, :code, :birthday, :address, presence: true
+  validates :name, :surname, :patronymic, :phone, :position, :code, :birthday, :address, :table_number, presence: true
   validates :code, length: {is: 10}
-  validates :code, :phone, uniqueness: true
+  validates :code, :phone, :table_number, uniqueness: true
   validates :phone, numericality: true
-  validates :code, :numericality => { greater_than_or_equal_to: 1 }
+  validates :table_number, :code, :numericality => { greater_than_or_equal_to: 1}
   validates :phone, length: {in: 5..10}
   validates :name, :surname, :patronymic, length: {in: 2..20}
   validates :address, length: {in: 20..60}

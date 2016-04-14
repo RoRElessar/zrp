@@ -7,6 +7,7 @@
     <% if @employee.fired? %>
       <p class="text-center"> Уволен: <strong><%= @employee.fired_date.strftime("%d.%m.%Y") %></strong></p>
     <% end %>
+    <p>Табельный номер: <%= @employee.table_number %></p>
   </div>
 
 

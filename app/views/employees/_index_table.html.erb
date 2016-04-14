@@ -16,7 +16,7 @@
     <% @employees.each do |employee| %>
 
         <tr>
-          <td></td>
+          <td class="text-center"><%= employee.table_number %></td>
           <td><%= employee.surname.mb_chars.capitalize %></td>
           <td><%= employee.name.mb_chars.capitalize %></td>
           <td><%= employee.patronymic.mb_chars.capitalize %></td>

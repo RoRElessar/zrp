@@ -41,7 +41,7 @@ class TablesController < ApplicationController
     @table = @employee.tables.find(params[:id])
     respond_to do |format|
       if @table.update(table_params)
-        format.html { redirect_to @table, notice: 'Табель успешно обновлен.' }
+        format.html { redirect_to employee_table_path(@employee, @table), notice: 'Табель успешно обновлен.' }
         format.json { render :show, status: :ok, location: @table }
       else
         format.html { render :edit }
@@ -53,8 +53,8 @@ class TablesController < ApplicationController
   private
 
   def table_params
-    params.require(:table).permit(:employee_id, :table_number, :days_worked, :days_of_sickness, :vacation_days,
-                                  :unpaid_vacation_days).merge(employee_id: :employee)
+    params.require(:table).permit(:employee_id, :days_worked, :days_of_sickness, :vacation_days, :unpaid_vacation_days,
+                                  :date_of_table, :closed)
   end
 
 end

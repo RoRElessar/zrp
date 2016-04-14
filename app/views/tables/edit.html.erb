@@ -1,3 +1,11 @@
-<h3>Редактирование табеля</h3>
+<div class="container">
+  <div  class="well well-sm text-center">
+    <h3>Редактирование табеля</h3>
+    <h4><%= @employee.surname %> <%= @employee.name %> <%= @employee.patronymic %></h4>
+    <p><strong><%= @table.date_of_table.strftime("%B %Y") %></strong></p>
+  </div>
 
-<%= render 'form' %>
+  <%= render 'form' %>
+
+<%= link_to 'Назад', employee_table_path, class: 'btn btn-default btn-sm' %>
+</div>

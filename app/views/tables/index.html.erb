@@ -5,22 +5,28 @@
     <p>Архив</p>
   </div>
 
-  <% @employee.tables.each do |table| %>
-      <table class="table table-hover">
-        <tr></tr>
-          <th>Отработано дней</th>
-          <th>Дней больничного</th>
-          <th>Дней отпуска</th>
-          <th>Дней за свой счет</th>
-          <th class="text-center">Действия</th>
-        <tr>
-          <td><%= table.days_worked %></td>
-          <td><%= table.days_of_sickness %></td>
-          <td><%= table.vacation_days %></td>
-          <td><%= table.unpaid_vacation_days %></td>
-          <td><%= link_to 'Редактировать', edit_employee_table_path(@employee, table), class: 'btn btn-xs btn-block btn-warning' %></td>
-        </tr>
-      </table>
-     <br>
+  <% if @employee.tables.present?  %>
+    <% @employee.tables.each do |table| %>
+          <p class="text-center"><strong><%= table.date_of_table.strftime("%B %Y") %></strong></p>
+        <table class="table table-hover">
+          <tr></tr>
+            <th>Отработано дней</th>
+            <th>Дней больничного</th>
+            <th>Дней отпуска</th>
+            <th>Дней за свой счет</th>
+            <th colspan="2" class="text-center">Действия</th>
+          <tr>
+            <td><%= table.days_worked %></td>
+            <td><%= table.days_of_sickness %></td>
+            <td><%= table.vacation_days %></td>
+            <td><%= table.unpaid_vacation_days %></td>
+            <td><%= link_to 'Просмотреть', employee_table_path(@employee, table), class: 'btn btn-xs btn-default btn-block' %></td>
+            <td><%= link_to 'Редактировать', edit_employee_table_path(@employee, table), class: 'btn btn-xs btn-block btn-warning' %></td>
+          </tr>
+        </table>
+       <br>
+  <% end %>
+  <% else %>
+      <h4>Архив пуст, <%= link_to 'создайте новый табель.', new_employee_table_path(@employee, @table) %></h4>
   <% end %>
 </div>

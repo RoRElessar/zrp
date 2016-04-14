@@ -1,25 +1,34 @@
 <%= form_for [@employee, @table]  do |f| %>
+
+  <%= render 'layouts/errors', object: @table %>
+
+  <div class="form-inline">
+    <div class="hidden">
+      <%= f.date_select :date_of_table, data: {value: DateTime.now} %>
+    </div>
   <p>
   <%= f.label :days_worked, 'Отработано дней:' %> <br>
-  <%= f.number_field :days_worked %>
+  <%= f.number_field :days_worked, class: 'form-control' %>
   </p>
 
   <p>
   <%= f.label :days_of_sickness, 'Дни на больничном:' %> <br> <!--Разбить позже на первые 5 дней и остальное, а так же на прошлый, этот и слудющий месяца-->
-  <%= f.number_field :days_of_sickness %>
+  <%= f.number_field :days_of_sickness, class: 'form-control' %>
   </p>
 
   <p>
   <%= f.label :vacation_days, 'Дни отпуска:' %> <br><!--Разбить позже на этот месяц, и 2 следующих месяца-->
-  <%= f.number_field :vacation_days %>
+  <%= f.number_field :vacation_days, class: 'form-control' %>
   </p>
 
   <p>
   <%= f.label :unpaid_vacation_days, 'Дни за свой счет:' %> <br>
-  <%= f.number_field :unpaid_vacation_days %>
+  <%= f.number_field :unpaid_vacation_days, class: 'form-control' %>
   </p>
 
   <p>
   <%= f.submit 'Подтвердить', class: 'btn btn-sm btn-success' %>
   </p>
 <% end %>
+
+  </div>
