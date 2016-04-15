@@ -17,9 +17,6 @@
 //= require_tree .
 //= require bootstrap-datepicker
 //= require bootstrap-datepicker/core
-//= require bootstrap-datepicker/locales/bootstrap-datepicker.es.js
-//= require bootstrap-datepicker/locales/bootstrap-datepicker.fr.js
-
 
 var ready;
 ready = function() {
@@ -29,7 +26,9 @@ ready = function() {
         false;
     });
 
-    $('.datepicker').datepicker();
+    $('.datepicker').datepicker({
+        format: "yyyy-mm-dd"
+    });
 };
 $(document).ready(ready);
 $(document).on('page:load', ready);

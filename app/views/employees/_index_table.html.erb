@@ -22,8 +22,8 @@
           <td><%= employee.patronymic.mb_chars.capitalize %></td>
           <td><%= employee.position.mb_chars.capitalize %></td>
           <td class="text-center"><%= employee.code %></td>
-          <td class="text-center"><%= employee.created_at.strftime("%d.%m.%Y") %></td>
-          <td class="text-center"><%= employee.fired_date.strftime("%d.%m.%Y") if employee.fired? %></td>
+          <td class="text-center"><%= employee.date_of_acception.to_date.strftime("%d.%m.%Y") %></td>
+          <td class="text-center"><%= employee.fired_date.to_date.strftime("%d.%m.%Y") if employee.fired? %></td>
           <td class="text-center"><%= link_to 'Просмотреть', employee, class: 'btn btn-default btn-xs btn-block' %></td>
           <td class="text-center"><%= link_to 'Редактировать', edit_employee_path(employee), class: 'btn btn-warning btn-xs btn-block' %></td>
         </tr>

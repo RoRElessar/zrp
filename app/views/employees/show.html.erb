@@ -3,9 +3,9 @@
 <div class="container">
   <div class="well well-sm">
     <h3 class="text-center"><%= @employee.surname.mb_chars.capitalize %> <%= @employee.name.mb_chars.capitalize %> <%= @employee.patronymic.mb_chars.capitalize %></h3>
-    <p class="text-center"> Принят: <strong><%= @employee.date_of_acception.strftime("%d.%m.%Y") %> </strong><p>
+    <p class="text-center"> Принят: <strong><%= @employee.date_of_acception.to_date.strftime("%d.%m.%Y") %> </strong><p>
     <% if @employee.fired? %>
-      <p class="text-center"> Уволен: <strong><%= @employee.fired_date.strftime("%d.%m.%Y") %></strong></p>
+      <p class="text-center"> Уволен: <strong><%= @employee.fired_date.to_date.strftime("%d.%m.%Y") %></strong></p>
     <% end %>
     <p>Табельный номер: <strong><%= @employee.table_number %></strong></p>
   </div>
@@ -27,7 +27,7 @@
 
         <p>
           <strong>Дата рождения:</strong>
-          <%= @employee.birthday.strftime("%d.%m.%Y") %>
+          <%= @employee.birthday.to_date.strftime("%d.%m.%Y") %>
         </p>
 
       </div>

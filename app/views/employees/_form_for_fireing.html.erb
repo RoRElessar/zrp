@@ -6,7 +6,7 @@
         <%= f.check_box :fired, required: true %>
       </div>
       <div class="col-md-6 text-center form-inline">
-        <%= f.text_field :fired_date, class: 'datepicker form-control', placeholder: 'Дата увольнения', size: '30' %>
+        <%= f.text_field :fired_date, class: 'datepicker form-control', placeholder: 'Дата увольнения', size: '30', readonly: true %>
       </div>
       <div class="text-center">
         <%= f.submit 'Подтвердить', class: 'btn btn-success btn-xs', data: {confirm: 'Вы уверены? Дальнейшее восстановление невозможно!'} %> <br>
