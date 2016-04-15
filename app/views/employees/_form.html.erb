@@ -14,8 +14,7 @@
           <% end %>
           <hr>
             <div class="field">
-              <%= f. label :date_of_acception, 'Дата принятия на работу:' %> <br>
-              <%= f.date_select :date_of_acception, start_year: Date.today.year - 60, end_year: Date.today.year, use_month_names: ['Январь', 'Февраль', 'Март','Апрель', 'Май', 'Июнь','Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь' ], order: [:day, :month, :year] %>
+              <%= f.text_field :date_of_acception, class: 'datepicker form-control', placeholder: 'Дата принятия на работу' %>
             </div> <br>
             <div class="field">
               <%= f.number_field :table_number, placeholder:'Табельный номер', class: 'form-control' %>
@@ -39,8 +38,7 @@
               <%= f.text_field :address, placeholder: 'Адресс', class: 'form-control' %>
             </div> <br>
             <div class="field">
-              <%= f.label 'Дата рождения'%><br>
-              <%= f.date_select :birthday, start_year: Date.today.year - 60, end_year: Date.today.year, use_month_names: ['Январь', 'Февраль', 'Март','Апрель', 'Май', 'Июнь','Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь' ], order: [:day, :month, :year] %>
+              <%= f.text_field :birthday, class: 'datepicker form-control', placeholder: 'Дата рождения' %>
             </div> <br>
             <div class="field">
               <%= f.phone_field :phone, placeholder: 'Телефон', class: 'form-control' %>

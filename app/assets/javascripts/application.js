@@ -15,6 +15,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require bootstrap-datepicker
+//= require bootstrap-datepicker/core
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.es.js
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.fr.js
 
 
 var ready;
@@ -24,6 +28,9 @@ ready = function() {
         $('#employees_search').serialize(), null, 'script');
         false;
     });
+
+    $('.datepicker').datepicker();
 };
 $(document).ready(ready);
 $(document).on('page:load', ready);
+
