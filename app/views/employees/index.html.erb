@@ -4,12 +4,21 @@
 
     <div class="container">
       <div class="form-inline">
-        <%= form_tag employees_path, :method => 'get', :id => 'employees_search', autocomplete: 'off' do %>
-          <p>
-            <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Поиск работников' %>
-            <%= submit_tag 'Поиск', :name => nil, class: 'btn btn-default' %>
-          </p>
-        <% end %>
+        <div class="form-group">
+          <div class="input-group">
+            <%= form_tag employees_path, :method => 'get', :id => 'employees_search', autocomplete: 'off' do %>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-search"></i>
+                  </span>
+                  <p>
+                    <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Поиск работников' %>
+                  </p>
+            <% end %>
+                </div>
+              </div>
+        </div>
       </div>
     </div>
   <div class="container">
@@ -25,3 +34,4 @@
   <h4 class="text-center">Работники отсутствуют в базе данных, <%= link_to 'начните добавлять их прямо сейчас', new_employee_path %> </h4>
 <% end %>
 
+</div>

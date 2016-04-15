@@ -3,7 +3,7 @@
   <%= form_for (@employee) do |f| %>
       <div class="col-md-6 text-center">
         <%= f.label :fired, 'Уволен:' %>
-        <%= f.check_box :fired %>
+        <%= f.check_box :fired, required: true %>
       </div>
       <div class="col-md-6 text-center">
         <%= f.label :fired_date, 'День увольнения:' %>
