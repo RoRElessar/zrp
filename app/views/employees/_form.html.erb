@@ -52,7 +52,9 @@
           </div>
           <br>
             <div class="thin text-center">
-              <%= f.submit 'Подтвердить', class: 'btn btn-success' %>
+              <%= f.button(type: 'submit', class: 'btn btn-success') do %>
+                <span class="glyphicon glyphicon-ok" aria-hidden="true"> Подтвердить</span>
+              <% end %>
             </div>
           <% end %>
       </div>
