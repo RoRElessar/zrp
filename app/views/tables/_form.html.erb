@@ -27,7 +27,9 @@
   </p>
 
   <p>
-  <%= f.submit 'Подтвердить', class: 'btn btn-sm btn-success' %>
+  <%= f.button(type: 'submit', class: 'btn btn-sm btn-success') do %>
+    <span class="glyphicon glyphicon-ok"> Подтвердить</span>
+  <% end %>
   </p>
 <% end %>
 

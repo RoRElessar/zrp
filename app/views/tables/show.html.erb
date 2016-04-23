@@ -1,12 +1,12 @@
- <div class="container">
-   <p id="notice"><%= notice %></p>
- </div>
-
-<div class="container-fluid">
+<div class="container">
   <h3 class="well well-sm text-center"><%= @employee.surname %> <%= @employee.name %> <%= @employee.patronymic %></h3>
   <p class="text-center"><strong><%= @table.date_of_table.strftime("%B %Y") %></strong></p>
 
-  <%= link_to 'Редактировать табель', edit_employee_table_path, class: 'btn btn-xs btn-block btn-primary' %>
+  <% unless @employee.fired? %>
+    <%= link_to 'Редактировать табель', edit_employee_table_path, class: 'btn btn-xs btn-block btn-primary' %>
+  <% else %>
+    <%= link_to 'Редактировать табель', '#', class: 'btn btn-xs btn-block btn-primary disabled' %>
+  <% end %>
   <table class="table table-hover table-bordered">
     <tr>
       <th>Отработано дней</th>
@@ -23,5 +23,7 @@
 
   </table>
 
-  <%= link_to 'Назад', employee_path(@employee), class: 'btn btn-sm btn-default' %>
+  <%= link_to employee_path(@employee), class: 'btn btn-sm btn-default' do %>
+    <span class="glyphicon glyphicon-arrow-left"> Назад</span>
+  <% end %>
 </div>

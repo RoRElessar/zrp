@@ -1,5 +1,5 @@
 <% if object.errors.any? %>
-    <div class="alert fade in alert-danger alert-dismissable"><button aria-hidden="true" class="close" data-dismiss="alert" type="button">×</button>
+    <div class="alert fade in alert-danger alert-dismissable errors"><button aria-hidden="true" class="close" data-dismiss="alert" type="button">×</button>
 
       <ul>
         <% object.errors.full_messages.each do |msg| %>

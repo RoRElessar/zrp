@@ -46,13 +46,17 @@ class EmployeesController < ApplicationController
         if @employee.update(employee_params)
           format.html { redirect_to @employee, notice: 'Работник успешно обновлен.' }
           format.json { render :show, status: :ok, location: @employee }
+=begin
+        elsif @employee.update(fired_params)
+          format.html { redirect_to @employee, notice: 'Работник был уволен.' }
+=end
         else
           format.html { render :edit }
           format.json { render json: @employee.errors, status: :unprocessable_entity }
         end
       end
     else
-      redirect_to @employee, notice: 'Работник уволен, редактирование невозможно.'
+      redirect_to @employee, alert: 'Работник уволен, редактирование невозможно.'
     end
   end
 
@@ -75,6 +79,13 @@ class EmployeesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def employee_params
       params.require(:employee).permit(:surname, :name, :patronymic, :position, :code, :address, :note, :birthday,
-                                       :phone, :email, :fired, :fired_date, :table_number, :date_of_acception)
+                                       :phone, :email, :table_number, :date_of_acception, :fired, :fired_date)
     end
+
+=begin
+    def fired_params
+      params.require(:employee).permit(:fired, :fired_date)
+    end
+=end
+
 end

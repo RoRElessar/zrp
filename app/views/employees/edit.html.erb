@@ -2,5 +2,9 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Показать', @employee, class: 'btn btn-xs btn-primary' %>
-<%= link_to 'Назад', employees_path, class: 'btn btn-xs btn-default' %>
+<%= link_to employees_path, class: 'btn btn-xs btn-default' do %>
+  <span class="glyphicon glyphicon-arrow-left"> Назад</span>
+<% end %> &nbsp
+<%= link_to @employee, class: 'btn btn-xs btn-primary'  do %>
+    <span class="glyphicon glyphicon-eye-open"> Показать</span>
+<% end %>

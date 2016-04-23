@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="container">
   <div class="well well-sm">
     <h3 class="text-center"><%= @employee.surname.mb_chars.capitalize %> <%= @employee.name.mb_chars.capitalize %> <%= @employee.patronymic.mb_chars.capitalize %></h3>
@@ -64,9 +62,15 @@
         <div id="collapse2" class="panel-collapse collapse">
           <div class="row">
             <p></p>
-            <div class="col-md-6 text-center">
-              <%= link_to 'Создать табель', new_employee_table_path(@employee), class: 'btn btn-xs btn-success' %>
-            </div>
+            <% unless @employee.fired? %>
+              <div class="col-md-6 text-center">
+                <%= link_to 'Создать табель', new_employee_table_path(@employee), class: 'btn btn-xs btn-success' %>
+              </div>
+            <% else %>
+              <div class="col-md-6 text-center">
+                <%= link_to 'Создать табель', '#', class: 'btn btn-xs btn-success disabled' %>
+              </div>
+            <% end  %>
             <div class="col-md-6 text-center">
               <%= link_to 'Архив', employee_tables_path(@employee), class: 'btn btn-xs btn-default' %>
               <p></p>

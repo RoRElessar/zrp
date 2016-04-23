@@ -39,14 +39,18 @@ class TablesController < ApplicationController
   def update
     @employee = Employee.find(params[:employee_id])
     @table = @employee.tables.find(params[:id])
-    respond_to do |format|
-      if @table.update(table_params)
-        format.html { redirect_to employee_table_path(@employee, @table), notice: 'Табель успешно обновлен.' }
-        format.json { render :show, status: :ok, location: @table }
-      else
-        format.html { render :edit }
-        format.json { render json: @table.errors, status: :unprocessable_entity }
+    unless @employee.fired?
+      respond_to do |format|
+        if @table.update(table_params)
+          format.html { redirect_to employee_table_path(@employee, @table), notice: 'Табель успешно обновлен.' }
+          format.json { render :show, status: :ok, location: @table }
+        else
+          format.html { render :edit }
+          format.json { render json: @table.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to employee_path(@employee), alert: 'Работник уволен, редактирование табеля невозможно.'
     end
   end
 

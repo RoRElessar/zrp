@@ -27,8 +27,12 @@ ready = function() {
     });
 
     $('.datepicker').datepicker({
-        format: "yyyy-mm-dd"
+        format: "dd.mm.yyyy"
     });
+
+    $('.flash-messages').fadeOut(4000);
+
+    $('.errors').fadeOut(6000);
 };
 $(document).ready(ready);
 $(document).on('page:load', ready);

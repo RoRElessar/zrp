@@ -7,5 +7,7 @@
 
   <%= render 'form' %>
 
-<%= link_to 'Назад', employee_table_path, class: 'btn btn-default btn-sm' %>
+<%= link_to employee_table_path, class: 'btn btn-default btn-sm' do %>
+  <span class="glyphicon glyphicon-arrow-left"> Назад</span>
+<% end %>
 </div>

@@ -27,9 +27,15 @@
             <td><%= link_to employee_table_path(@employee, table), class: 'btn btn-xs btn-default btn-block' do %>
               <span class="glyphicon glyphicon-eye-open" aria-hidden="true"> Просмотр</span>
             <% end %></td>
-            <td><%= link_to edit_employee_table_path(@employee, table), class: 'btn btn-xs btn-block btn-warning' do %>
-              <span class="glyphicon glyphicon-pencil" aria-hidden="true"> Редактировать</span>
-            <% end %></td>
+            <% unless @employee.fired? %>
+              <td><%= link_to edit_employee_table_path(@employee, table), class: 'btn btn-xs btn-block btn-warning' do %>
+                <span class="glyphicon glyphicon-pencil" aria-hidden="true"> Редактировать</span>
+              <% end %></td>
+            <% else %>
+              <td><%= link_to '#', class: 'btn btn-xs btn-block btn-warning disabled' do %>
+                <span class="glyphicon glyphicon-pencil" aria-activedescendant="true"> Редактировать</span>
+              <% end %></td>
+            <% end %>
           </tr>
         </table>
        <br>
