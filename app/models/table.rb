@@ -2,6 +2,6 @@ class Table < ActiveRecord::Base
 
   belongs_to :employee
 
-  validates :days_worked, :vacation_days, :unpaid_vacation_days, :days_of_sickness, length: {in: 0..31}
+  validates :days_worked, :unpaid_vacation_days, length: {in: 0..31}
 
 end

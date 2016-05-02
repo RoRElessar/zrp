@@ -57,8 +57,12 @@ class TablesController < ApplicationController
   private
 
   def table_params
-    params.require(:table).permit(:employee_id, :days_worked, :days_of_sickness, :vacation_days, :unpaid_vacation_days,
-                                  :date_of_table, :closed)
+    params.require(:table).permit(:employee_id, :days_worked, :unpaid_vacation_days, :days_of_sickness_previous_5,
+                                  :days_of_sickness_previous, :days_of_sickness_current_5, :days_of_sickness_current,
+                                  :days_of_sickness_pre_previous_5, :days_of_sickness_pre_previous, :vacation_days_current,
+                                  :vacation_days_next, :vacation_days_next_2, :courses, :different, :bonus, :of_hard_work,
+                                  :excess_fare, :night_hours, :days_of_substitution, :days_of_pluralism, :date_of_table,
+                                  :closed)
   end
 
 end
