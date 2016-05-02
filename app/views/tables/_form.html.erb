@@ -11,31 +11,31 @@
         <table class="table table-hover table-bordered">
           <tr>
             <th colspan="10">Отработано дней(часов)<br></th>
-            <td colspan="2"><%= f.number_field :days_worked, class: 'form-control' %></td>
+            <td colspan="2"><%= f.number_field :days_worked, class: 'form-control input-sm' %></td>
           </tr>
           <tr>
             <th colspan="10">Дней(часов) совместительства<br></th>
-            <td colspan="2">ф</td>
+            <td colspan="2"><%= f.number_field :days_of_pluralism, class: 'form-control input-sm' %></td>
           </tr>
           <tr>
             <th colspan="10">Дней(часов) заместительства<br></th>
-            <td colspan="2">ф</td>
+            <td colspan="2"><%= f.number_field :days_of_substitution, class: 'form-control input-sm' %></td>
           </tr>
           <tr>
             <th colspan="10">Ночные часы<br></th>
-            <td colspan="2">ф</td>
+            <td colspan="2"><%= f.number_field :night_hours, class: 'form-control input-sm' %></td>
           </tr>
           <tr>
             <th colspan="10">Доплата</th>
-            <td colspan="2">ф</td>
+            <td colspan="2"><%= f.number_field :excess_fare, class: 'form-control input-sm' %></td>
           </tr>
           <tr>
             <th colspan="10">За напряженный труд<br></th>
-            <td colspan="2">ф</td>
+            <td colspan="2"><%= f.number_field :of_hard_work, class: 'form-control input-sm' %></td>
           </tr>
           <tr>
             <th colspan="10">Премия</th>
-            <td colspan="2">ф</td>
+            <td colspan="2"><%= f.number_field :bonus, class: 'form-control input-sm' %></td>
           </tr>
           <tr>
             <th colspan="12" class="text-center">Отпуск (дни/часы)</th>
@@ -46,9 +46,9 @@
             <th colspan="4" class="text-center">За следующим<br></th>
           </tr>
           <tr>
-            <td colspan="4">ф</td>
-            <td colspan="4">ф</td>
-            <td colspan="4">ф</td>
+            <td colspan="4"><%= f.number_field :vacation_days_current, class: 'form-control input-sm' %></td>
+            <td colspan="4"><%= f.number_field :vacation_days_next, class: 'form-control input-sm' %></td>
+            <td colspan="4"><%= f.number_field :vacation_days_next_2, class: 'form-control input-sm' %></td>
           </tr>
           <tr>
             <th colspan="12" class="text-center">Больничный (дни/часы)<br></th>
@@ -67,29 +67,40 @@
             <th colspan="2" class="text-center">Более 5</th>
           </tr>
           <tr>
-            <td colspan="2">ф</td>
-            <td colspan="2">ф</td>
-            <td colspan="2">ф</td>
-            <td colspan="2">ф</td>
-            <td colspan="2">ф</td>
-            <td colspan="2">ф</td>
+            <td colspan="2"><%= f.number_field :days_of_sickness_pre_previous_5, class: 'form-control input-sm' %></td>
+            <td colspan="2"><%= f.number_field :days_of_sickness_pre_previous, class: 'form-control input-sm' %></td>
+            <td colspan="2"><%= f.number_field :days_of_sickness_previous_5, class: 'form-control input-sm' %></td>
+            <td colspan="2"><%= f.number_field :days_of_sickness_previous, class: 'form-control input-sm' %></td>
+            <td colspan="2"><%= f.number_field :days_of_sickness_current_5, class: 'form-control input-sm' %></td>
+            <td colspan="2"><%= f.number_field :days_of_sickness_current, class: 'form-control input-sm' %></td>
           </tr>
           <tr>
             <th colspan="10">Отпуск за свой счет<br></th>
-            <td colspan="2"><%= f.number_field :unpaid_vacation_days %></td>
+            <td colspan="2"><%= f.number_field :unpaid_vacation_days, class: 'form-control input-sm' %></td>
           </tr>
           <tr>
             <th colspan="10">Курсы<br></th>
-            <td colspan="2">ф</td>
+            <td colspan="2"><%= f.number_field :courses, class: 'form-control input-sm' %></td>
           </tr>
           <tr>
             <th colspan="10">Разное<br></th>
-            <td colspan="2">ф</td>
+            <td colspan="2"><%= f.number_field :different, class: 'form-control input-sm' %></td>
           </tr>
         </table>
       </div>
+     <!-- <div class="col-md-2"></div>
+      <div class="col-md-2"></div>
+      <div class="col-md-2">
+        <table class="table table-bordered table-hover">
+          <tr>
+            <th>Аванс</th>
+            <td>ф</td>
+          </tr>
+
+        </table>
+      </div>-->
     </div>
-  <p>
+  <p class="text-center">
   <%= f.button(type: 'submit', class: 'btn btn-sm btn-success') do %>
     <span class="glyphicon glyphicon-ok"> Подтвердить</span>
   <% end %>
