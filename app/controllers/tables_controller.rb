@@ -62,7 +62,7 @@ class TablesController < ApplicationController
                                   :days_of_sickness_pre_previous_5, :days_of_sickness_pre_previous, :vacation_days_current,
                                   :vacation_days_next, :vacation_days_next_2, :courses, :different, :bonus, :of_hard_work,
                                   :excess_fare, :night_hours, :days_of_substitution, :days_of_pluralism, :date_of_table,
-                                  :closed)
+                                  :closed, :indexation)
   end
 
 end
