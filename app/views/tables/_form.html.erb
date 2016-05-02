@@ -8,7 +8,7 @@
     </div>
     <div class="row">
       <div class="col-md-6">
-        <table class="table table-hover table-bordered">
+        <table class="table table-hover table-bordered table-striped">
           <tr>
             <th colspan="10">Отработано дней(часов)<br></th>
             <td colspan="2"><%= f.number_field :days_worked, class: 'form-control input-sm' %></td>
@@ -37,7 +37,7 @@
             <th colspan="10">Премия</th>
             <td colspan="2"><%= f.number_field :bonus, class: 'form-control input-sm' %></td>
           </tr>
-          <tr>
+          <tr class="info">
             <th colspan="12" class="text-center">Отпуск (дни/часы)</th>
           </tr>
           <tr>
@@ -50,7 +50,7 @@
             <td colspan="4"><%= f.number_field :vacation_days_next, class: 'form-control input-sm' %></td>
             <td colspan="4"><%= f.number_field :vacation_days_next_2, class: 'form-control input-sm' %></td>
           </tr>
-          <tr>
+          <tr class="info">
             <th colspan="12" class="text-center">Больничный (дни/часы)<br></th>
           </tr>
           <tr>
