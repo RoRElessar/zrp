@@ -1,11 +1,33 @@
 <div class="container">
-  <h3 class="well well-sm text-center"><%= @employee.surname %> <%= @employee.name %> <%= @employee.patronymic %></h3>
-  <p class="text-center"><strong><%= @table.date_of_table.strftime("%B %Y") %></strong></p>
-
+  <div class="well well-sm">
+    <h3 class="text-center"><%= @employee.surname %> <%= @employee.name %> <%= @employee.patronymic %></h3>
+    <p class="text-center"><%= @employee.position %></p>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <%= link_to '#', class: 'btn btn-sm btn-default' do %>
+        <span class="glyphicon glyphicon-arrow-left"> Предыдущий работник</span>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <p class="text-center"><strong><%= @table.date_of_table.strftime("%B %Y") %></strong></p>
+    </div>
+    <div class="col-md-4 text-right">
+      <%= link_to '#', class: 'btn btn-sm btn-default' do %>
+        <span>Следующий работник</span> &nbsp;
+        <span class="glyphicon glyphicon-arrow-right"></span>
+      <% end %>
+    </div>
+  </div>
+  <br>
   <% unless @employee.fired? %>
-    <%= link_to 'Редактировать табель', edit_employee_table_path, class: 'btn btn-xs btn-block btn-primary' %>
+    <%= link_to edit_employee_table_path, class: 'btn btn-xs btn-block btn-primary' do %>
+      <span class="glyphicon glyphicon-pencil"> Редактировать табель</span>
+    <% end %>
   <% else %>
-    <%= link_to 'Редактировать табель', '#', class: 'btn btn-xs btn-block btn-primary disabled' %>
+    <%= link_to '#', class: 'btn btn-xs btn-block btn-primary disabled' do %>
+      <span class="glyphicon glyphicon-pencil"> Редактировать табель</span>
+    <% end %>
   <% end %>
   <table class="table table-hover table-bordered">
     <tr>
